@@ -6,7 +6,7 @@
   let banner = document.getElementById('banner');
   let apresentar = document.querySelector(".card-apresentar")
   let card_nome = document.querySelector(".card-nome")
-
+  let contador = document.getElementById("contador")
 /* ============================================================
   IMAGEM PADRAO - alterar imagem padrão para segunda
    ============================================================ */
@@ -148,7 +148,7 @@ localStorage.setItem("corFavorita", corFavorita.value);
   count++;
   localStorage.setItem("profileCount", count);
 
-document.getElementById("contador").innerText = `Perfil atualizado ${count} vezes`;
+contador.innerText = `Perfil atualizado ${count} vezes`;
 
 }
 
@@ -169,6 +169,8 @@ document.getElementById("reset").addEventListener("click", function () {
   // REMOVE APENAS hobbies criados
   let hobbiesCriados = document.querySelectorAll("#lista-hobbies .hobby-criado");
   hobbiesCriados.forEach(h => h.remove());
+
+  localStorage.setItem("profileCount", "0");
   });
 
 /* ============================================================
