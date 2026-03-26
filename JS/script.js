@@ -138,7 +138,7 @@ document.getElementById("form-portfolio").addEventListener("submit", function (e
   apresentar.textContent = apresentacao.value;
   banner.src = fotoURL.value;
 
-  card.style.backgroundColor = corFavorita.value + "20"; // cor mais clara
+  card.style.backgroundColor = corFavorita.value + "60"; // cor mais clara
 
 localStorage.setItem("nome", nome.value);
 localStorage.setItem("apresentacao", apresentacao.value);
