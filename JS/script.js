@@ -6,7 +6,7 @@
   let banner = document.getElementById('banner');
   let apresentar = document.querySelector(".card-apresentar")
   let card_nome = document.querySelector(".card-nome")
-  let contador = document.getElementById("contador")
+
 /* ============================================================
   IMAGEM PADRAO - alterar imagem padrão para segunda
    ============================================================ */
@@ -148,7 +148,7 @@ localStorage.setItem("corFavorita", corFavorita.value);
   count++;
   localStorage.setItem("profileCount", count);
 
-contador.innerText = `Perfil atualizado ${count} vezes`;
+document.getElementById("contador").innerText = `Perfil atualizado ${count} vezes`;
 
 }
 
