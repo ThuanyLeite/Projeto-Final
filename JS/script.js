@@ -1,8 +1,16 @@
+  let nome = document.querySelector(".name-form")
+  let apresentacao = document.getElementById("apresentar")
+  let fotoURL = document.getElementById("foto")
+  let corFavorita = document.getElementById("favcolor")
+  let card = document.querySelector(".card-body");
+  let banner = document.getElementById('banner');
+  let apresentar = document.querySelector(".card-apresentar")
+  let card_nome = document.querySelector(".card-nome")
 
 /* ============================================================
   IMAGEM PADRAO - alterar imagem padrão para segunda
    ============================================================ */
-let banner = document.getElementById('banner');
+
 document.getElementById("changeImg").addEventListener("click", changeImg);
 function changeImg() {
   let src = banner.getAttribute('src');
@@ -56,10 +64,10 @@ function getRandom() {
 }
 
 function mudarCor(botao) {
-  const r = getRandom();
-  const g = getRandom();
-  const b = getRandom();
-  const cor = `rgb(${r}, ${g}, ${b})`;
+  let r = getRandom();
+  let g = getRandom();
+  let b = getRandom();
+  let cor = `rgb(${r}, ${g}, ${b})`;
 
   botao.style.backgroundColor = cor;
   botao.style.color = "white";
@@ -92,7 +100,7 @@ document.getElementById("btn-enviar-url").addEventListener("click", function () 
   const url = document.getElementById("foto").value.trim();
   if (!url) return;
 
-  const img = document.getElementById("banner");
+  let img = document.getElementById("banner");
   img.src = url;
 });
 
@@ -105,9 +113,9 @@ document.getElementById("add-hobby").addEventListener("click", function () {
   const hobby = prompt("Digite um hobby:");
   if (!hobby || hobby.trim() === "") return;
 
-  const lista = document.getElementById("lista-hobbies");
+  let lista = document.getElementById("lista-hobbies");
 
-  const li = document.createElement("li");
+  let li = document.createElement("li");
   li.textContent = hobby;
 
   // MARCA como hobby criado pelo usuário
@@ -122,42 +130,44 @@ document.getElementById("add-hobby").addEventListener("click", function () {
    ============================================================ */
 document.getElementById("form-portfolio").addEventListener("submit", function (event) {
   event.preventDefault();
-
   atualizarCard();
 });
+   function atualizarCard() {
+  card_nome.textContent = nome.value;
+  apresentar.textContent = apresentacao.value;
+  banner.src = fotoURL.value;
 
-function atualizarCard() {
-  const nome = document.querySelector(".name-form").value;
-  const apresentacao = document.getElementById("apresentar").value;
-  const fotoURL = document.getElementById("foto").value;
-  const corFavorita = document.getElementById("favcolor").value;
+  card.style.backgroundColor = corFavorita.value + "20"; // cor mais clara
 
-  document.querySelector(".card-nome").textContent = nome;
-  document.querySelector(".card-apresentar").textContent = apresentacao;
-  document.getElementById("banner").src = fotoURL;
+localStorage.setItem("nome", nome.value);
+localStorage.setItem("apresentacao", apresentacao.value);
+localStorage.setItem("fotoURL", fotoURL.value);
+localStorage.setItem("corFavorita", corFavorita.value);
 
-  const card = document.querySelector(".card-body");
+ let count = parseInt(localStorage.getItem("profileCount") || "0");
+  count++;
+  localStorage.setItem("profileCount", count);
 
-  card.style.backgroundColor = corFavorita + "20";  /* cor mais clara*/
- }
+document.getElementById("contador").innerText = `Perfil atualizado ${count} vezes`;
+
+}
 
 /* ============================================================
     RESETAR PORTFÓLIO - apaga os dados inseridos e volta ao padrão
    ============================================================ */
 document.getElementById("reset").addEventListener("click", function () {
 
-  document.querySelector(".name-form").value = "";
-  document.getElementById("apresentar").value = "";
-  document.getElementById("foto").value = "";
-  document.querySelector(".card-nome").textContent = "Nome";
-  document.querySelector(".card-apresentar").textContent = "Apresentação";
-  document.getElementById("foto-new").src = "";
+  nome.value = "";
+  apresentacao.value = "";
+  fotoURL.value = "";
+  card_nome.textContent = "Nome";
+  apresentar.textContent = "Apresentação";
+  banner.src = "imagens/husky_2.webp";
 
-  const card = document.querySelector(".card-body");
   card.style.backgroundColor = "white";
 
   // REMOVE APENAS hobbies criados
-  const hobbiesCriados = document.querySelectorAll("#lista-hobbies .hobby-criado");
+  let hobbiesCriados = document.querySelectorAll("#lista-hobbies .hobby-criado");
   hobbiesCriados.forEach(h => h.remove());
   });
 
@@ -167,16 +177,16 @@ document.getElementById("reset").addEventListener("click", function () {
 
 document.getElementById("mudarfoto").addEventListener("click", async function () {
 
-  const tipo = Math.random() < 0.5 ? "dog" : "cat";  /* 0.5 = 50% como um cara ou coroa...*/
+  let tipo = Math.random() < 0.5 ? "dog" : "cat";  /* 0.5 = 50% como um cara ou coroa...*/
   let url = "";
 
   if (tipo === "dog") {
-    const resposta = await fetch("https://dog.ceo/api/breeds/image/random");
-    const dados = await resposta.json();
+    let resposta = await fetch("https://dog.ceo/api/breeds/image/random");
+    let dados = await resposta.json();
     url = dados.message;
   } else {
-    const resposta = await fetch("https://api.thecatapi.com/v1/images/search");
-    const dados = await resposta.json();
+    let resposta = await fetch("https://api.thecatapi.com/v1/images/search");
+    let dados = await resposta.json();
     url = dados[0].url;
   }
 
@@ -185,24 +195,6 @@ document.getElementById("mudarfoto").addEventListener("click", async function ()
 
 });
 
-// document.getElementById("form-portfolio").addEventListener("submit", function (event) {
-//   event.preventDefault();
-
-    
-//     let nome_form  = getElementByClass('name-form');
-//     let apresentar_form = getElementById('apresentar');
-//     let corfavorita_form   = getElementById('favcolor');
-//     let foto_banner  = getElementById('banner');
-
-//     card_nome.innerText = nome_form;
-//     card_apresentar.innerText = apresentar_form;
-//     banner.src = foto_banner;
-//     card.style.backgroundColor = corfavorita_form;
-
-//     count = parseInt(localStorage.getItem('profileCount') || 0) + 1;
-//     localStorage.setItem('profileCount', count);
-//     contador.innerText = `Perfil atualizado ${count} vezes`;
-// });
 
 
 
