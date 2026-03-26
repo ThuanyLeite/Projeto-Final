@@ -138,7 +138,7 @@ function atualizarCard() {
 
   const card = document.querySelector(".card-body");
 
-  card.style.backgroundColor = corFavorita;
+  card.style.backgroundColor = corFavorita + "20";
   listItems.forEach(li => li.style.backgroundColor = corFavorita);
 }
 
