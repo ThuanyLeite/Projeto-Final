@@ -24,12 +24,12 @@ let darktheme = document.getElementById("mudartema");
 darktheme.addEventListener('click', mudartema);
 function mudartema() {
   const bodytheme = document.querySelector("body");
-  if (bodytheme.classList.contains('bg-light', 'text-dark')) {
-    bodytheme.classList.remove('bg-light', 'text-dark');
-    bodytheme.classList.add('bg-dark', 'text-light');
-  } else {
+  if (bodytheme.classList.contains('bg-dark', 'text-light')) {
     bodytheme.classList.remove('bg-dark', 'text-light');
     bodytheme.classList.add('bg-light', 'text-dark');
+  } else {
+    bodytheme.classList.remove('bg-light', 'text-dark');
+    bodytheme.classList.add('bg-dark', 'text-light');
   }
 }
 
