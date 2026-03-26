@@ -149,7 +149,7 @@ localStorage.setItem("corFavorita", corFavorita.value);
   count++;
   localStorage.setItem("profileCount", count);
 
-document.getElementById("contador").innerText = ` ${count} `;
+document.getElementById("contador").innerText = ` ${count}`;
 
 }
 
