@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
-<html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8" />
 
-    <!-- Referencias -->
+  <!-- Referencias -->
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="CSS/bootstrap.css" />
   <script src="JS/script.js" defer></script>
-  
+
   <title>Projeto Final</title>
 </head>
 
@@ -27,17 +27,17 @@
       <h6>Sou programador Low-code..</h6><br>
 
       <h5>
-        <p class="card-nome">Nome</p>
+        <p class="card-nome" id="card_nome">Nome</p>
       </h5>
       <h6>
-        <p class="card-apresentar">Apresentação</p>
+        <p class="card-apresentar" id="card_apresentar">Apresentação</p>
       </h6>
 
       <!-- Imagens -->
       <img id="banner" src="imagens/husky_2.webp" alt=""><br><br>
       <button type="button" class="btn btn-danger" id="changeImg">Trocar Imagem</button><br><br>
-      
-      
+
+
       <!-- Formulário -->
       <form id="form-portfolio">
         <input type="text" class="name-form" placeholder="Insira seu nome" /><br><br>
@@ -50,14 +50,16 @@
         <!-- Cor favorita -->
         <label>Cor favorita:<input type="color" id="favcolor" /></label><br><br>
         <button type="submit" class="btn btn-warning" id="submit">Atualizar Portifólio</button>
+        <!-- <p id="contador">Perfil atualizado 0 vezes</p> -->
+            
     </div>
   </div>
 
   <!-- Container direita -->
-     <container class="container-md-4">
+  <container class="container-md-4">
     <div class="parte2">
 
-       <!-- Foto aleatória -->
+      <!-- Foto aleatória -->
       <img id="foto-new" src="" alt="Foto">
 
       <button type="button" class="btn btn-warning" id="mudarfoto">Gerar foto aleatória!</button><br><br>
@@ -84,9 +86,6 @@
     </div>
   </container>
   </form>
-
-
-
-  </form>
 </body>
+
 </html>

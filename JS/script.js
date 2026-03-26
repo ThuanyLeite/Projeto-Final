@@ -139,8 +139,7 @@ function atualizarCard() {
   const card = document.querySelector(".card-body");
 
   card.style.backgroundColor = corFavorita + "20";  /* cor mais clara*/
-  listItems.forEach(li => li.style.backgroundColor = corFavorita);
-}
+ }
 
 /* ============================================================
     RESETAR PORTFÓLIO - apaga os dados inseridos e volta ao padrão
@@ -186,7 +185,24 @@ document.getElementById("mudarfoto").addEventListener("click", async function ()
 
 });
 
+// document.getElementById("form-portfolio").addEventListener("submit", function (event) {
+//   event.preventDefault();
 
+    
+//     let nome_form  = getElementByClass('name-form');
+//     let apresentar_form = getElementById('apresentar');
+//     let corfavorita_form   = getElementById('favcolor');
+//     let foto_banner  = getElementById('banner');
+
+//     card_nome.innerText = nome_form;
+//     card_apresentar.innerText = apresentar_form;
+//     banner.src = foto_banner;
+//     card.style.backgroundColor = corfavorita_form;
+
+//     count = parseInt(localStorage.getItem('profileCount') || 0) + 1;
+//     localStorage.setItem('profileCount', count);
+//     contador.innerText = `Perfil atualizado ${count} vezes`;
+// });
 
 
 
