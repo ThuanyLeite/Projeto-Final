@@ -8,9 +8,9 @@ function changeImg() {
   let src = banner.getAttribute('src');
 
   if (src.includes("husky_2.webp")) {
-    banner.setAttribute('src', "/imagens/husky_3.webp");
+    banner.setAttribute('src', "imagens/husky_3.webp");
   } else {
-    banner.setAttribute('src', "/imagens/husky_2.webp");
+    banner.setAttribute('src', "imagens/husky_2.webp");
   }
 }
 
