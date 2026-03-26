@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<html>
+
+<head>
+  <!-- Referencias -->
+  <link rel="stylesheet" href="/Projeto/CSS/style.css" />
+  <link rel="stylesheet" href="/Projeto/CSS/bootstrap.css" />
+  <script src="/Projeto/JS/script.js" defer></script>
+  <meta charset="utf-8" />
+  <title>Projeto Final</title>
+</head>
+
+<body>
+
+
+  <!-- CARD -->
+  <div class="card">
+    <div class="card-body">
+
+      <!-- Mudar TEMA -->
+      <button class="btn btn-light" id="mudartema">🌙 Mudar Tema</button><br><br>
+
+      <!-- Dados do portfólio -->
+      <h5 class="card-title">Personalizar Portifólio</h5><br>
+      <h6>Sou programador Low-code..</h6><br>
+
+      <h5>
+        <p class="card-nome">Nome</p>
+      </h5>
+      <h6>
+        <p class="card-apresentar">Apresentação</p>
+      </h6>
+
+      <!-- Imagens -->
+      <img id="banner" src="/Projeto/imagens/husky_2.webp" alt="">
+      <button type="button" class="btn btn-danger" id="changeImg">Trocar Imagem</button>
+      <img id="foto-new" src="" alt="Foto">
+
+      <button type="button" class="btn btn-warning" id="mudarfoto">Gerar foto aleatória!</button><br><br>
+
+      <!-- Formulário -->
+      <form id="form-portfolio">
+        <input type="text" class="name-form" placeholder="Insira seu nome" /><br><br>
+        <textarea id="apresentar" placeholder="Insira sua apresentação"></textarea><br><br>
+
+        <label class="form-label">URL Foto:</label>
+        <input type="url" class="foto-form" id="foto" placeholder="Insira a URL da sua foto" /><br><br>
+        <button type="button" class="btn btn-primary mt-2" id="btn-enviar-url">Enviar URL</button>
+
+        <!-- Cor favorita -->
+        Cor favorita:<input id="favcolor" type="color" /><br><br>
+        <button type="submit" class="btn btn-warning" id="submit">Atualizar Portifólio</button>
+    </div>
+  </div>
+
+  <!-- Container direita -->
+     <container class="container-md-4">
+    <div class="parte2">
+
+      <!-- Piada -->
+      <h2>Piada do dia</h2>
+      <p id="piada-texto">Carrega no botão para uma piada</p>
+
+      <!-- Botões de ações -->
+      <button type="button" class="btn btn-success" id="btn-piada">Carregar piada do dia</button>
+      <button type="button" class="btn btn-danger" id="reset">Resetar Portifólio</button>
+      <button type="button" class="btn btn-success" id="btn-color">Gerar cor aleatória</button>
+
+      <!-- Lista de hobbies -->
+      <ul id="lista-hobbies">
+        <li>Programação WEB</li>
+        <li>Desenvolvimento de Software</li>
+        <li>SQL</li>
+        </li>
+      </ul>
+
+      <!-- Botões de adicionar hobbies -->
+      <button type="button" class="btn btn-warning" id="add-hobby">Adicionar hobbies:</button>
+    </div>
+  </container>
+  </form>
+
+
+
+  </form>
+</body>

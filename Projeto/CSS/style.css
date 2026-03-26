@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  /* centraliza horizontalmente */
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+
+.card {
+  width: 50rem;
+
+}
+
+#submit {
+  width: 10rem;
+}
+
+#mudarfoto {
+  width: 10rem;
+}
+
+#reset {
+  width: 10rem;
+}
+
+#foto-new {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  /* corta a imagem para caber sem distorcer */
+  border-radius: 10px;
+}
+
+#enviar-url {
+  width: 10rem;
+}
+
+.card-body {
+  text-align: center;
+  /* centraliza texto centro */
+
+}
+
+#foto-fixa {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  /* corta a imagem para caber sem distorcer */
+  border-radius: 10px;
+}
+
+#favcolor {
+  justify-content: center;
+  /* centraliza horizontalmente */
+  align-items: center;
+  text-align: center;
+}
+
+#banner {
+  /* imagem principal carregada */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.parte2 {
+  text-align: center;
+}
