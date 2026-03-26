@@ -6,6 +6,7 @@
   let banner = document.getElementById('banner');
   let apresentar = document.querySelector(".card-apresentar")
   let card_nome = document.querySelector(".card-nome")
+  let contagem = document.getElementById("contador");
 
 /* ============================================================
   IMAGEM PADRAO - alterar imagem padrão para segunda
@@ -148,7 +149,7 @@ localStorage.setItem("corFavorita", corFavorita.value);
   count++;
   localStorage.setItem("profileCount", count);
 
-document.getElementById("contador").innerText = `Perfil atualizado ${count} vezes`;
+document.getElementById("contador").innerText = ` ${count} `;
 
 }
 
@@ -170,7 +171,10 @@ document.getElementById("reset").addEventListener("click", function () {
   let hobbiesCriados = document.querySelectorAll("#lista-hobbies .hobby-criado");
   hobbiesCriados.forEach(h => h.remove());
 
+  
   localStorage.setItem("profileCount", "0");
+  document.getElementById("contador").innerText = 0; 
+  
   });
 
 /* ============================================================
